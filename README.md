@@ -1,10 +1,12 @@
+
 # animated_toast_plus
 
-[![pub package](https://pub.dev/packages/animated_toast_plus)] 
+[![pub package](https://img.shields.io/pub/v/animated_toast_plus.svg)](https://pub.dev/packages/animated_toast_plus)
+
 ![Animated Toast Plus Demo](https://raw.githubusercontent.com/dev-mahmudulhasan/animated_toast_plus/main/assets/image.png)
 
-
 A customizable and animated toast/snackbar notification package for Flutter with smooth animations and multiple toast types.
+
 
 ---
 
@@ -26,5 +28,4 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  animated_toast_plus: ^1.0.2
-
+  animated_toast_plus: ^1.0.3
