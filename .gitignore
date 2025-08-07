@@ -1,4 +1,6 @@
-# Miscellaneous
+# -----------------------------
+# ✅ MISCELLANEOUS
+# -----------------------------
 *.class
 *.log
 *.pyc
@@ -10,22 +12,41 @@
 .svn/
 migrate_working_dir/
 
-# IntelliJ related
+# -----------------------------
+# ✅ IDE SPECIFIC FILES
+# -----------------------------
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Uncomment below if you don't want VSCode settings in repo
+# .vscode/
 
-# Flutter/Dart/Pub related
-# Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
-/pubspec.lock
-**/doc/api/
+# -----------------------------
+# ✅ FLUTTER/DART/PUB SPECIFIC
+# -----------------------------
+
+# Don't include pubspec.lock for packages (only for apps)
+pubspec.lock
+
+# Build & tool directories
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
+.packages
 build/
+
+# API doc folder
+**/doc/api/
+
+# Avoid accidentally excluding important files
+# Removed: lib/example/ or any specific lib file
+# Because you may want to include example code when publishing packages
+# DO NOT ignore `lib/example/` or `example/`
+
+# -----------------------------
+# ✅ IF NEEDED: pub ignore file
+# -----------------------------
+# If you want to prevent some files from being published
+# create a .pubignore file (separate from this one)

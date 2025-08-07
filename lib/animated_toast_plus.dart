@@ -130,7 +130,7 @@ class AnimatedToastPlus {
       ),
     );
 
-    overlay?.insert(overlayEntry);
+    overlay.insert(overlayEntry);
 
     Future.delayed(duration + const Duration(milliseconds: 300), () {
       overlayEntry.remove();
@@ -190,7 +190,6 @@ class _ToastWidgetState extends State<_ToastWidget>
         beginOffset = const Offset(0, 1);
         break;
       case ToastPosition.center:
-      default:
         beginOffset = Offset.zero;
         break;
     }
@@ -249,7 +248,6 @@ class _ToastWidgetState extends State<_ToastWidget>
         padding = const EdgeInsets.only(bottom: 40);
         break;
       case ToastPosition.center:
-      default:
         alignment = Alignment.center;
         padding = EdgeInsets.zero;
         break;
