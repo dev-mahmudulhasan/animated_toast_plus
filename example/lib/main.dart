@@ -27,40 +27,71 @@ class ToastDemo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text(
+              'Try different animated toast types',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+            const SizedBox(height: 24),
             _toastButton(
               context,
-              label: 'Success Toast',
+
+              label: '✅ Success Toast',
+              color: Colors.green,
               onPressed: () => AnimatedToastPlus.showSuccess(
                 context,
+                position: ToastPosition.top,
                 title: 'Success!',
                 subtitle: 'Everything is working perfectly.',
               ),
             ),
             _toastButton(
               context,
-              label: 'Error Toast',
+              label: '❌ Error Toast',
+              color: Colors.red,
               onPressed: () => AnimatedToastPlus.showError(
                 context,
+                position: ToastPosition.bottom,
                 title: 'Error!',
                 subtitle: 'Something went wrong.',
               ),
             ),
             _toastButton(
               context,
-              label: 'Warning Toast',
+              label: '⚠️ Warning Toast',
+              color: Colors.orange,
               onPressed: () => AnimatedToastPlus.showWarning(
                 context,
+                position: ToastPosition.center,
                 title: 'Warning!',
                 subtitle: 'Be careful with this step.',
               ),
             ),
             _toastButton(
               context,
-              label: 'Info Toast',
+              label: 'ℹ️ Info Toast',
+              color: Colors.blue,
               onPressed: () => AnimatedToastPlus.showInfo(
                 context,
                 title: 'Info',
                 subtitle: 'Here’s something useful.',
+              ),
+            ),
+            _toastButton(
+              context,
+              label: '🎉 Custom Toast',
+              color: Colors.teal,
+              onPressed: () => AnimatedToastPlus.show(
+                context,
+                title: 'Custom',
+                subtitle: 'You have 3 new notifications.',
+                iconWidget: Image.network(
+                  'https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg',
+                  height: 28,
+                  width: 28,
+                  fit: BoxFit.cover,
+                ),
+                backgroundColor: Colors.teal,
+                position: ToastPosition.center,
               ),
             ),
           ],
@@ -72,11 +103,27 @@ class ToastDemo extends StatelessWidget {
   Widget _toastButton(
     BuildContext context, {
     required String label,
+    required Color color,
     required VoidCallback onPressed,
   }) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: ElevatedButton(onPressed: onPressed, child: Text(label)),
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: color,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(vertical: 14),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            textStyle: const TextStyle(fontSize: 16),
+          ),
+          child: Text(label),
+        ),
+      ),
     );
   }
 }
