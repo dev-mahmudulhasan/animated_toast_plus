@@ -25,7 +25,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  animated_toast_plus: ^1.0.0
+  animated_toast_plus: ^1.0.1
 
 ## Preview
 ![alt text](image.png)
